@@ -1,0 +1,325 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Courier New, monospace;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.1); /* прозорий фон для панелі */
+    z-index: 3;
+}
+
+.container {
+    width: 90%; /* Ширина контейнера */
+    max-width: 1200px; /* Максимальна ширина */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Стилі для логотипу-кнопки */
+.logo {
+    display: block;
+    width: 85px; /* Встановлюємо ширину логотипу */
+    height: 85px; /* Встановлюємо висоту логотипу */
+    background-image: url('logo.png'); /* Задаємо зображення як фон */
+    background-size: cover; /* Збільшуємо зображення для заповнення кнопки */
+    background-repeat: no-repeat; /* Забороняємо кнопці повторювати зображення */
+    background-position: center; /* Розміщення зображення у центрі кнопки */
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 55px; /* Відступ між кнопками */
+}
+
+nav ul li:last-child {
+    margin-right: 60px; /* Відступ для останнього елемента */
+}
+
+nav ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #333; /* Змінюємо колір тексту на чорний */
+    font-size: 35px; /* Розмір шрифту */
+    background-color: rgba(255, 255, 255, 0.1); /* Прозорий фон кнопок */
+    width: 200px; /* Ширина кнопки */
+    height: 80px; /* Висота кнопки */
+    border-radius: 5px;
+    font-weight: 500; /* Задаємо жирність тексту (работает от 600)*/
+    transition: background 0.3s, color 0.3s; /* Плавна анімація зміни кольору фону і тексту */
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.3); /* Прозорий фон кнопок при наведенні */
+    color: #fff; /* Змінюємо колір тексту на white при наведенні */
+}
+
+.search-button img {
+    width: 40px; /* Розмір іконки пошуку */
+    height: 35px; /* Розмір іконки пошуку */
+    margin: 0px; /* Відступи для іконки пошуку (НЕ ЧІПАТЬ!)*/
+}
+
+.content {
+    margin-top: 10px; /* Відстань від верхньої панелі */
+    position: relative;
+}
+
+.background-container {
+    width: 60%;
+    height: 60%;
+    max-width: 1200px;
+    max-height: 800px;
+    background: url('TimetoRelax.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    top: 3%; /* Позиціонуємо вертикально внизу */
+    left: 0;
+    transform: translateY(3%); /* Коригуємо позицію */
+    z-index: 1;
+}
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    background: linear-gradient(to bottom, rgba(144, 157, 140, 1), rgba(0, 100, 0, 0) 100%, rgba(0, 100, 0, 0) 100%);
+    pointer-events: none; /* Щоб градієнт не перекривав доступ до контейнера */
+    z-index: 2;
+}
+
+
+/* HOME */
+
+/* Стилі для прозорої панелі шапки на сторінці home */
+.transparent-header {
+    background-color: rgba(152, 144, 133, 0.1); /* Повністю прозорий фон */
+}
+
+/* Спеціальні стилі для кнопок на сторінці home */
+.home-header-button nav ul li a {
+    color: #ffffff; /* Змінюємо колір тексту на white */
+    background-color: rgba(255, 255, 255, 0.1); /* Змінюємо прозорість фону кнопок */
+}
+
+
+
+
+
+.home-header-button nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.3); /* Прозорий фон кнопок при наведенні */
+    color: #ffffff; /* Змінюємо колір тексту на white при наведенні */
+}
+
+
+
+
+
+.background-container-home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('home.png'); /* Замініть 'background2.jpg' на ваш шлях до іншої фонової картинки */
+    background-size: cover; /* Зображення покриває весь контейнер */
+    background-repeat: no-repeat;
+    background-position: bottom;
+    z-index: -2; /* Відправляємо фон назад */
+}
+
+.gradient-overlay-home {
+    position: absolute;
+    bottom: 0; /* Градієнт починається знизу */
+    left: 0;
+    width: 100%;
+    height: 25%; /* Градієнт займає четверть екрану */
+    background: linear-gradient(to top, rgba(152, 144, 133, 1), rgba(0, 100, 0, 0) 100%, rgba(0, 100, 0, 0) 100%);
+    pointer-events: none; /* Щоб градієнт не перекривав доступ до контейнера */
+    z-index: -1;
+}
+
+/* Нові стилі для прямокутника з текстом */
+.info-box {
+    position: absolute;
+    right: 5%;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 500px; /* Збільшуємо ширину */
+    background-color: rgba(255, 255, 255, 0.7); /* Напівпрозорий фон */
+    padding: 50px; /* Збільшуємо внутрішні відступи */
+    border-radius: 10px;
+}
+
+.info-box h2 {
+    font-size: 40px;
+    text-align: top; /* Заголовок по центру */
+    margin: 0; /* Видаляємо всі зовнішні відступи */
+    margin-bottom: 20px; /* Збільшуємо відступ після заголовка */
+}
+
+.info-box p {
+    font-size: 33px;
+    text-align: left; /* Текст по лівому краю */
+    margin: 0; /* Відступи обнулені, щоб вирівняти зверху і знизу */
+}
+
+/* Стилі для кнопки "About Us" */
+.about-button {
+    position: absolute; /* Абсолютне позиціонування */
+    right: 5%; /* Вирівнювання праворуч */
+    top: 75%; /* Розміщення під .info-box */
+    width: 560px; /* Встановлення тієї ж ширини, що й у .info-box */
+    padding: 20px; /* Відступи кнопки */
+    background-color: rgba(255, 255, 255, 0.7); /* Прозорий фон кнопки */
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 35px; /* Розмір шрифту */
+    font-weight: bold; /* Жирний шрифт */
+    transition: background-color 0.3s;
+}
+
+.about-button:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Фон при наведенні */
+}
+
+
+
+/* ABOUT */
+
+.about-header-button nav ul li a:hover {
+    color: #333; /* Змінюємо колір тексту на black при наведенні */
+}
+/* Стилі для прозорої панелі шапки на сторінці */
+.transparent-header-about {
+    background-color: rgba(152, 144, 133, 0); /* Повністю прозорий фон */
+}
+/* Стиль для фону сторінки About */
+.background-container-about {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('fon.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    z-index: 0;
+}
+
+/* Стилі для PNG елементів */
+.element {
+    position: absolute;
+
+}
+
+.el1 {
+    top: 19%;
+    left: 59%;
+    width: 500px; /* Встановіть потрібний розмір */
+    z-index: 3;
+}
+
+.photo {
+    top: 61%;
+    right: 9%;
+    width: 500px; /* Встановіть потрібний розмір */
+    z-index: 3;
+}
+
+.volni {
+    bottom: 58%;
+    left: 45%;
+    width: 850px; /* Встановіть потрібний розмір */
+    z-index: 2
+}
+.rect {
+    bottom: 4.5%;
+    right: 55%;
+    width: 470px; /* Встановіть потрібний розмір */
+
+}
+
+/* Стилі для текстових елементів */
+.text-container {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0); /* прозорий фон */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+/* Стиль для заголовка */
+.title-container {
+    top: 19%; /* Встановіть потрібне розташування */
+    left: 29%;
+    transform: translateX(-50%);
+    width: 40%; /* Ширина контейнера з заголовком */
+    text-align: center; /* Вирівнювання заголовка по центру */
+}
+
+.about-title {
+    font-size: 3.5em; /* Розмір шрифту для заголовка */
+    margin-top: 0; /* Відсутність верхнього відступу */
+    color: #fff; /* Змінено колір заголовка на білий */
+}
+
+
+/* Стиль для опису */
+.description-container {
+    bottom: 1.8%; /* Встановіть потрібне розташування */
+    left: 29.5%;
+    transform: translateX(-50%);
+    width: 29%; /* Ширина контейнера з описом */
+    text-align: left; /* Вирівнювання тексту по лівому краю */
+}
+
+.about-description {
+    font-size: 1.7em; /* Розмір шрифту для опису */
+}
+
+/* Стиль для nadfotkoy */
+.nadfotkoy-container {
+    bottom: 37%; /* Встановіть потрібне розташування */
+    left: 74%;
+    transform: translateX(-50%);
+    width: 37%; /* Ширина контейнера з описом */
+    text-align: left; /* Вирівнювання тексту по лівому краю */
+    text-align: center; /* Вирівнювання заголовка по центру */
+}
+
+.about-nadfotkoy {
+    font-size: 1.6em; /* Розмір шрифту для опису */
+    color: #fff; /* Змінено колір на білий */
+}
